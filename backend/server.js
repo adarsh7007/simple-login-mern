@@ -1,12 +1,13 @@
 var express = require("express");
 var app = express();
 const bcrypt = require('bcrypt');
+const Port = process.env.PORT||2000
 var jwt = require('jsonwebtoken');
 var cors = require('cors');
   bodyParser = require('body-parser'),
   path = require('path');
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/productDB");
+mongoose.connect("mongodb+srv://userone:12345@cluster0.fgk70.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 var fs = require('fs');
 var product = require("./model/product.js");
 var user = require("./model/user.js");
@@ -302,6 +303,6 @@ app.get("/get", (req, res) => {
 
 });
 
-app.listen(2000, () => {
-  console.log("Server"+2000);
+app.listen(Port, () => {
+  console.log("Server"+Port);
 });
