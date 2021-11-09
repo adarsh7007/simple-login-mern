@@ -45,7 +45,7 @@ export default class Dashboard extends Component {
     if (this.state.search) {
       data = `${data}&search=${this.state.search}`;
     }
-    axios.get(`http://localhost:2000/get${data}`, {
+    axios.get(`/get${data}`, {
       headers: {
         'token': this.state.token
       }
